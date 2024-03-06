@@ -11,6 +11,8 @@ public class Student {
 	public String name;
 	public String surname;
 
+	public TipoStudent tipo;
+
 	// LISTA COSTRUTTORI
 	// Se non dichiaro nessun costruttore, ci sarà sempre e comunque
 	// già il costruttore vuoto come default
@@ -21,6 +23,7 @@ public class Student {
 		this.name = "NOME DI DEFAULT";
 		this.surname = "COGNOME DI DEFAULT";
 		this.id = rndm.nextInt(1, 10000);
+		this.tipo = TipoStudent.FULLSTACK;
 	}
 
 	// II COSTRUTTORE
@@ -29,6 +32,7 @@ public class Student {
 		this.name = name;
 		this.surname = "COGNOME DI DEFAULT";
 		this.id = rndm.nextInt(1, 10000);
+		this.tipo = TipoStudent.FULLSTACK;
 	}
 
 	// III COSTRUTTORE
@@ -37,6 +41,16 @@ public class Student {
 		this.name = name;
 		this.surname = surname;
 		this.id = rndm.nextInt(1, 10000);
+		this.tipo = TipoStudent.FULLSTACK;
+	}
+
+	// IV COSTRUTTORE
+	public Student(String name, String surname, TipoStudent tipo) {
+		Random rndm = new Random();
+		this.name = name;
+		this.surname = surname;
+		this.id = rndm.nextInt(1, 10000);
+		this.tipo = tipo;
 	}
 
 	// LISTA METODI
@@ -53,12 +67,15 @@ public class Student {
 	// valori allora equals mi deve tornare true. E allora sovrascrivo anch'esso
 
 	// Per far generare questi 2 metodi a Intellij basta fare tasto dx --> Generate
+
+
 	@Override
 	public String toString() {
 		return "Student{" +
 				"id=" + id +
 				", name='" + name + '\'' +
 				", surname='" + surname + '\'' +
+				", tipo=" + tipo +
 				'}';
 	}
 
