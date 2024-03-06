@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Student {
 
+	public static String school = "Epicode";
 	// LISTA ATTRIBUTI
 	public int id;
 	public String name;
