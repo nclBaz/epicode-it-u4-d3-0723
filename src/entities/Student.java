@@ -7,11 +7,11 @@ public class Student {
 
 	public static String school = "Epicode";
 	// LISTA ATTRIBUTI
-	public int id;
-	public String name;
-	public String surname;
+	private int id;
+	private String name;
+	private String surname;
 
-	public TipoStudent tipo;
+	private TipoStudent tipo;
 
 	// LISTA COSTRUTTORI
 	// Se non dichiaro nessun costruttore, ci sarà sempre e comunque
@@ -47,14 +47,53 @@ public class Student {
 	// IV COSTRUTTORE
 	public Student(String name, String surname, TipoStudent tipo) {
 		Random rndm = new Random();
-		this.name = name;
-		this.surname = surname;
+		this.setName(name);
+		this.setSurname(surname);
 		this.id = rndm.nextInt(1, 10000);
 		this.tipo = tipo;
 	}
 
+	// GETTERS & SETTERS
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		if (name.length() < 3) {
+			System.err.println("Il nome deve essere più lungo di 2 caratteri");
+		} else {
+			this.name = name;
+		}
+	}
+
+	// Posso decidere arbitrariamente di non avere determinati setters
+	// se non voglio dare la possibilità di sovrascrivere un attributo
+/*	public void setId(int id) {
+		this.id = id;
+	}*/
+
+	public int getId() {
+		return id;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
+	public TipoStudent getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoStudent tipo) {
+		this.tipo = tipo;
+	}
+
 	// LISTA METODI
-	public void sayHello() {
+	private void sayHello() {
 		System.out.println("Ciao sono " + this.name + " " + this.surname + ", ID: " + this.id);
 	}
 

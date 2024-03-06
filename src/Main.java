@@ -10,10 +10,10 @@ public class Main {
 		Student giacomo2 = new Student("Giacomo", "Poretti");
 		Student marina = new Student("Marina", "Massironi", TipoStudent.FRONTEND);
 
-		giacomo2.id = giacomo.id;
+		// giacomo2.id = giacomo.id;
 
 		Student ajeje = aldo; // NON COPIARE MAI GLI OGGETTI COSI'
-		ajeje.name = "Ajeje";
+		//ajeje.name = "Ajeje";
 
 		// Esempi di utilizzo di metodi non statici
 /*		aldo.sayHello();
@@ -32,6 +32,10 @@ public class Main {
 		System.out.println(giacomo2);
 		System.out.println(ajeje);
 		System.out.println(marina);
+
+		marina.setName("G");
+		System.out.println(marina.getName());
+
 
 		if (giacomo.equals(giacomo2)) {
 			System.out.println("I due giacomo sono uguali");
